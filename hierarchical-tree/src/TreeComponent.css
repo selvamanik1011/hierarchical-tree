@@ -1,0 +1,181 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+/* Overall tree container style */
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s ease;
+}
+
+/* Lines connecting tree nodes */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+/* Adjust line for single child */
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+/* No border for first and last child */
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Node links styling */
+.tree li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: #007BFF; /* Blue */
+}
+
+/* Hover effects for nodes */
+.tree li a:hover, .tree li a:hover + ul li a {
+    background-color: #0056b3; /* Darker blue */
+    border-color: #0056b3;
+}
+
+/* Node button styles */
+button.add, button.edit, button.delete {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button.add {
+    background-color: #008CBA; /* Blue */
+    color: white;
+}
+
+button.add:hover {
+    background-color: #005f73;
+}
+
+button.edit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button.delete {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+button.edit:hover {
+    background-color: #3e8e41;
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Inputs */
+input[type="text"], input[type="number"] {
+    border-radius: 25px; /* Oval shape */
+    padding: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 200px; /* Adjust width as needed */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #94a0b4;
+}
+
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Additional styling for icons and buttons */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.icon-button:hover {
+    background-color: #f0f0f0;
+    color: #0056b3; /* Icon hover color */
+}
+
+/* Style for the add person form */
+.add-person-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-person-form input {
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 200px; /* Adjust width as needed */
+}
+
+.add-person-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #008CBA; /* Blue */
+    color: white;
+}
+
+.add-person-form button:hover {
+    background-color: #005f73;
+}
